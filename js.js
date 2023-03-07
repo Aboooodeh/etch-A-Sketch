@@ -15,9 +15,24 @@ function createGrid(rows, cols) {
         const gridItem = document.createElement("div");
         gridItem.classList.add("grid-item");
         gridContainer.appendChild(gridItem);
+        gridItem.addEventListener('mouseenter', () => {
+          gridItem.classList.add('colorChange');
+        });
     }
     }
 }
 
-// create initial grid with 16 rows and columns
-createGrid(10, 10);
+
+function getUserInput(){
+  let d
+  do{
+  d=prompt("Enter a number (less than 100): ");
+  }while(d>100);
+  createGrid(d,d);
+}
+
+
+
+createGrid(16, 16);
+btn=document.getElementById('button')
+btn.addEventListener('click', getUserInput );

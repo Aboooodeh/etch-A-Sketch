@@ -3,9 +3,11 @@ body {
     font-size: 16px;
     background-color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 10px;
 }
 
 #grid-container {
@@ -16,5 +18,9 @@ body {
 }
 
 .grid-item {
-    border: 1px solid white;
+    border: 1px solid grey;
+}
+
+.colorChange{
+    background-color: white;
 }
