@@ -15,13 +15,22 @@ function createGrid(rows, cols) {
         const gridItem = document.createElement("div");
         gridItem.classList.add("grid-item");
         gridContainer.appendChild(gridItem);
-        gridItem.addEventListener('mouseenter', () => {
-          gridItem.classList.add('colorChange');
-        });
+        gridItem.addEventListener('mouseenter',changeColorR);
     }
     }
 }
 
+function changeColorBTW(){
+  this.style.backgroundColor='white';
+}
+
+function changeColorR(){
+  let r=Math.floor(Math.random() * 256);
+  let g=Math.floor(Math.random() * 256);
+  let b=Math.floor(Math.random() * 256);
+  this.style.backgroundColor=`rgb(${r},${g},${b})`;
+  this.removeEventListener('mouseenter',changeColorR);
+}
 
 function getUserInput(){
   let d
